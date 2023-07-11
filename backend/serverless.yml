@@ -1,0 +1,38 @@
+service: cats
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  listCats:
+    handler: handler.listCats
+    events:
+      - httpApi:
+          path: /cats
+          method: get
+  showCat:
+    handler: handler.showCat
+    events:
+      - httpApi:
+          path: /cats/{id}
+          method: get
+  editCat:
+    handler: handler.editCat
+    events:
+      - httpApi:
+          path: /cats/{id}
+          method: put    
+  createCat:
+    handler: handler.createCat
+    events:
+      - httpApi:
+          path: /cats
+          method: post
+  deleteCat:
+    handler: handler.deleteCat
+    events:
+      - httpApi:
+          path: /cats/{id}
+          method: delete
