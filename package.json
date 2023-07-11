@@ -1,5 +1,5 @@
 {
-  "name": "playground-react-aws",
+  "name": "app",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -12,5 +12,15 @@
     "nohoist": [
       "**"
     ]
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^7.0.0",
+    "eslint-config-custom": "*",
+    "prettier": "latest",
+    "turbo": "latest"
   }
 }
